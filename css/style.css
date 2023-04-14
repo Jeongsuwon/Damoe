@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+/* 전역변수 */
+:root{
+    --main-color:black;
+    --sub-color:white;
+    --third-color:gray;
+    --point-color:gold;
+    --screen-width: 1190px;
+}
+
 body{
     font-family: "Maven Pro", "Noto Sans KR", sans-serif;
     font-size: 14px;
@@ -11,6 +20,7 @@ body{
 }
 ul, ol{
     list-style-type: none;
+    margin: 0;
 }
 
 a, a:link{
@@ -27,7 +37,7 @@ a, a:link{
 
 /* 헤더 영역 */
 .header-wrap{
-    max-width: 1190px;
+    max-width: var(--screen-width);
     margin: 0 auto;
     overflow: hidden;
     padding: 50px 0;
@@ -84,7 +94,7 @@ a, a:link{
 
 .main-item{
     height: 400px;
-    max-width: 1190px;
+    max-width: var(--screen-width);
     margin: 0 auto;
     position: relative;
 }
@@ -93,4 +103,163 @@ a, a:link{
     position: absolute;
     right: 0;
     bottom: -65px;
+}
+
+/* #main */
+.theraphy-items{
+    float: left;
+}
+
+.damoe-pr{
+    float: right;
+}
+.items-pr{
+    max-width: var(--screen-width);
+    margin: 100px auto;
+    /* background: var(--point-color); css 전역변수 중 --point-color 라는 값을 사용 */
+    overflow: hidden;
+    
+}
+.box-title{
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.theraphy-items > div{
+    float: left;
+    border: 1px solid #666;
+    background: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.theraphy-items > div:nth-of-type(1){
+    margin-right: 118px;
+}
+
+
+
+.theraphy-items > div img{
+    opacity: .3;
+    transform: scale(1);  /* 변형: 크기(100%) */
+    transition: all .3s ease-in;
+}
+.theraphy-items > div:hover img{
+    opacity: 1;
+    transform: scale(1.2);  /* 변형: 크기 (120%) */
+}
+
+.to-bag{
+    position: absolute;
+    z-index: 100; /* 겹치는 요소를 숫자 값만큼 앞쪽에 배치하는 속성 */
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-top: -15px;
+    background: var(--point-color);
+    color: var(--third-color);
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.theraphy-items > div:hover .to-bag{
+    margin-top: -15px;
+    cursor:pointer; /* 마우스 포인터 모양 --> 손 모양*/
+}
+.damoe-pr > div{
+    position: relative;
+}
+.pager{
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    margin-left: -30px;
+}
+
+.pager > li{
+    background: white;
+    width: 20px;
+    height: 10px;
+    font-size: 0;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.pager > li:nth-child(1){
+    background: var(--point-color);
+}
+
+/* event 소식 영역 */
+aside{
+    background: white;
+}
+aside::before, aside::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--third-color);
+    margin: 10px 0;
+}
+
+.news{
+    max-width: var(--screen-width);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.news p{
+    float: left;
+}
+
+.news p:nth-child(1){
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--third-color);
+    margin: 0 30px 0 0;
+}
+.news p:nth-child(2){
+    margin: 5px 0 0 0;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 300;
+    color:rgb(119, 72, 72)
+}
+
+/* footer 영역 */
+footer{
+    background: var(--sub-color);
+    color: var(--main-color);
+}
+
+.footer-wrap{
+    margin: 10px auto;
+    max-width: var(--screen-width);
+    padding: 50px 0;
+    position: relative;
+}
+
+.extras-link li{
+    display: inline-block;
+}
+
+.extras-link li:after{
+    content: "|";
+    display: inline-block;
+    width: 1px;
+    margin: 0 10px;
+}
+
+.extras-link li:nth-child(3)::after{
+    content: "";
+}
+
+
+
+.sub-logo{
+    position: absolute;
+    right: 0;
 }
