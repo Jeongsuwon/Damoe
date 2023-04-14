@@ -13,6 +13,11 @@ ul, ol{
     list-style-type: none;
 }
 
+a, a:link{
+    color: inherit;
+    text-decoration: none;
+}
+
 /* 이벤트 배너 */
 .event{
     position: fixed;
@@ -25,14 +30,67 @@ ul, ol{
     max-width: 1190px;
     margin: 0 auto;
     overflow: hidden;
+    padding: 50px 0;
 }
 .header-wrap .main-logo{
     float: left;
 }
 .main-nav{
     float: left;
+    margin-left: 30px;
+}
+
+.main-nav ul{
+    border-left: 1px solid #000;
+}
+
+.main-nav ul li{
+    margin-bottom: 10px;
+}
+
+.main-nav ul li a{
+    font-size: 18px;
+    font-weight: 500;
+    color: #666;
+    padding:0 0 0 20px;
 }
 
 .sns-links{
     float: right;
+}
+
+.sns-links li{
+    float: left;
+}
+
+.sns-links li:nth-child(2){
+    margin: 0 10px;
+}
+.sns-links img{
+    opacity: 30%;
+    transition: all  .4s  ease cubic-bezier(.57,.46,.06,.74);
+}
+
+.sns-links img:hover{
+    opacity: 100%;
+}
+
+/* visual 영역 */
+
+.hero-img{
+    background: url("../images/visual_bg.jpg") no-repeat center / cover;
+    /* 배경- 이미지 경로()             반복x   위치    배경-크기 : 빈 공간 메울 수 있도록 이미지 확장 */
+}
+
+.main-item{
+    height: 400px;
+    max-width: 1190px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.main-item img{
+    position: absolute;
+    right: 0;
+    bottom: -65px;
 }
